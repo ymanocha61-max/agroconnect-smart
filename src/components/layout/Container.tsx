@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 type ContainerProps = {
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
   size?: "default" | "wide" | "narrow";
 };
 
