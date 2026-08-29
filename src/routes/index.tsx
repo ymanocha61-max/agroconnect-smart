@@ -3,6 +3,10 @@ import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Problem } from "@/components/site/Problem";
 import { HowItWorks } from "@/components/site/HowItWorks";
+import { Farmers } from "@/components/site/Farmers";
+import { Buyers } from "@/components/site/Buyers";
+import { AIForecasting } from "@/components/site/AIForecasting";
+import { Logistics } from "@/components/site/Logistics";
 
 const title = "Krishisetu — Sell Smarter. Buy Direct. Move Produce Faster.";
 const description =
