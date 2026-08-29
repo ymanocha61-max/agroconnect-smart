@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { Users, PackageSearch, Eye, Route } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -29,6 +30,7 @@ const benefits: { icon: LucideIcon; title: string; body: string }[] = [
 ];
 
 export function Buyers({ onPostRequirement }: { onPostRequirement?: () => void }) {
+  const openRequirement = useOpenCTA("requirement");
   const { ref, visible } = useReveal<HTMLUListElement>();
 
   return (
@@ -59,7 +61,7 @@ export function Buyers({ onPostRequirement }: { onPostRequirement?: () => void }
         ))}
       </ul>
 
-      <CTAButton size="lg" className="mt-10 w-full sm:w-auto" onClick={onPostRequirement}>
+      <CTAButton size="lg" className="mt-10 w-full sm:w-auto" onClick={onPostRequirement ?? openRequirement}>
         Post Your Requirement
       </CTAButton>
     </SectionWrapper>

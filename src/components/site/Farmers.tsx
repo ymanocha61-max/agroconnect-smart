@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { Store, LineChart, Search, Boxes, Truck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -34,6 +35,7 @@ const benefits: { icon: LucideIcon; title: string; body: string }[] = [
 ];
 
 export function Farmers({ onJoin }: { onJoin?: () => void }) {
+  const openFarmer = useOpenCTA("farmer");
   const { ref, visible } = useReveal<HTMLUListElement>();
 
   return (
@@ -50,7 +52,7 @@ export function Farmers({ onJoin }: { onJoin?: () => void }) {
             Built for individual growers and farmer producer organisations who want fairer prices
             and fewer intermediaries.
           </p>
-          <CTAButton size="lg" className="mt-8 w-full sm:w-auto" onClick={onJoin}>
+          <CTAButton size="lg" className="mt-8 w-full sm:w-auto" onClick={onJoin ?? openFarmer}>
             Join as Farmer / FPO
           </CTAButton>
         </div>

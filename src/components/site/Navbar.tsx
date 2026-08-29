@@ -16,6 +16,7 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const openFarmer = useOpenCTA("farmer");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 

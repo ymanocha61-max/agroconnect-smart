@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { Sparkles, Sprout, Store } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -11,6 +12,9 @@ type Props = {
 };
 
 export function FinalCTA({ onJoinFarmer, onPostRequirement, onCheckCrop }: Props) {
+  const openFarmer = useOpenCTA("farmer");
+  const openBuyer = useOpenCTA("buyer");
+  const openCrop = useOpenCTA("crop");
   const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
@@ -30,14 +34,14 @@ export function FinalCTA({ onJoinFarmer, onPostRequirement, onCheckCrop }: Props
             eyebrow: "Farmers & FPOs",
             body: "List your produce and reach relevant buyers.",
             cta: "Join as Farmer / FPO",
-            onClick: onJoinFarmer,
+            onClick: onJoinFarmer ?? openFarmer,
           },
           {
             icon: Store,
             eyebrow: "Buyers",
             body: "Tell us what you need and discover potential suppliers.",
             cta: "Post Your Requirement",
-            onClick: onPostRequirement,
+            onClick: onPostRequirement ?? openBuyer,
           },
         ].map((card, i) => (
           <div
@@ -78,7 +82,7 @@ export function FinalCTA({ onJoinFarmer, onPostRequirement, onCheckCrop }: Props
           size="lg"
           variant="ghost"
           className="w-full border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
-          onClick={onCheckCrop}
+          onClick={onCheckCrop ?? openCrop}
         >
           <Sparkles aria-hidden="true" />
           Check My Crop

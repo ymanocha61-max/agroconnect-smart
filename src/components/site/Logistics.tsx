@@ -24,6 +24,7 @@ const nodes: Node[] = [
 ];
 
 export function Logistics() {
+  const openLogistics = useOpenCTA("logistics");
   const { ref, visible } = useReveal<HTMLDivElement>(0.12);
 
   return (

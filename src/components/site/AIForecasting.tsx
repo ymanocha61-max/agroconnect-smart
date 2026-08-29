@@ -65,6 +65,7 @@ function Sparkline({ series, muted }: { series: number[]; muted: boolean }) {
 }
 
 export function AIForecasting() {
+  const openCrop = useOpenCTA("crop");
   const { ref, visible } = useReveal<HTMLDivElement>(0.12);
 
   return (

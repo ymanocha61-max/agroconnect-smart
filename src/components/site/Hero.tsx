@@ -19,6 +19,8 @@ function FloatingLeaf({ className, delay }: { className: string; delay: string }
 }
 
 export function Hero() {
+  const openCrop = useOpenCTA("crop");
+  const openRequirement = useOpenCTA("requirement");
   return (
     <SectionWrapper
       id="top"
