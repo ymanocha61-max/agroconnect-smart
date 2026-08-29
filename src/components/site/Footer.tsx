@@ -13,7 +13,7 @@ const groups: { heading: string; links: { label: string; href: string }[] }[] = 
   {
     heading: "Capabilities",
     links: [
-      { label: "AI Insights", href: "#ai-forecasting" },
+      { label: "AI Insights", href: "#ai-insights" },
       { label: "Logistics", href: "#logistics" },
       { label: "Market Intelligence", href: "#market-intelligence" },
     ],
