@@ -7,6 +7,11 @@ import { Farmers } from "@/components/site/Farmers";
 import { Buyers } from "@/components/site/Buyers";
 import { AIForecasting } from "@/components/site/AIForecasting";
 import { Logistics } from "@/components/site/Logistics";
+import { PriceIntelligence } from "@/components/site/PriceIntelligence";
+import { Trust } from "@/components/site/Trust";
+import { Impact } from "@/components/site/Impact";
+import { FinalCTA } from "@/components/site/FinalCTA";
+import { Footer } from "@/components/site/Footer";
 
 const title = "Krishisetu — Sell Smarter. Buy Direct. Move Produce Faster.";
 const description =
@@ -38,7 +43,12 @@ function Index() {
         <Buyers />
         <AIForecasting />
         <Logistics />
+        <PriceIntelligence />
+        <Trust />
+        <Impact />
+        <FinalCTA />
       </main>
+      <Footer />
     </div>
   );
 }
