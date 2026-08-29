@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { Sprout, Warehouse, Route, Store, ArrowRight, ArrowDown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -100,7 +101,7 @@ export function Logistics() {
           </p>
         </div>
 
-        <CTAButton size="lg" variant="outline" className="w-full sm:w-auto">
+        <CTAButton size="lg" variant="outline" className="w-full sm:w-auto" onClick={openLogistics}>
           Explore Smart Logistics
         </CTAButton>
       </div>

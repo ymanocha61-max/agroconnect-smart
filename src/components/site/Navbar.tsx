@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { useEffect, useState } from "react";
 import { Menu, X, Sprout } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -73,7 +74,7 @@ export function Navbar() {
             <CTAButton variant="ghost" size="sm">
               Login
             </CTAButton>
-            <CTAButton size="sm">Join Marketplace</CTAButton>
+            <CTAButton size="sm" onClick={openFarmer}>Join Marketplace</CTAButton>
           </div>
 
           <button
@@ -111,7 +112,7 @@ export function Navbar() {
               <CTAButton variant="outline" block>
                 Login
               </CTAButton>
-              <CTAButton block>Join Marketplace</CTAButton>
+              <CTAButton block onClick={() => { setOpen(false); openFarmer(); }}>Join Marketplace</CTAButton>
             </div>
           </Container>
         </div>
