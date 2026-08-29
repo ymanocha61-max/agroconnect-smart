@@ -34,6 +34,10 @@ function Index() {
         <Hero />
         <Problem />
         <HowItWorks />
+        <Farmers />
+        <Buyers />
+        <AIForecasting />
+        <Logistics />
       </main>
     </div>
   );
