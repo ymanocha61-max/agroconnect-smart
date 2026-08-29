@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { Problem } from "@/components/site/Problem";
+import { HowItWorks } from "@/components/site/HowItWorks";
 
 const title = "Krishisetu — Sell Smarter. Buy Direct. Move Produce Faster.";
 const description =
@@ -26,6 +28,8 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <Problem />
+        <HowItWorks />
       </main>
     </div>
   );
