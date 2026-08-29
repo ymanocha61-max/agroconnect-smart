@@ -90,16 +90,16 @@ export function AIForecasting() {
             visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
         >
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
-            <div className="min-w-0">
-              <h3 className="truncate text-base font-semibold text-leaf sm:text-lg">
+          <div className="flex flex-col gap-3 sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+            <span className="w-fit rounded-md bg-secondary px-2.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-secondary-foreground sm:order-2">
+              Sample AI Insight — Demo Data
+            </span>
+            <div className="min-w-0 sm:order-1">
+              <h3 className="text-base font-semibold text-leaf sm:truncate sm:text-lg">
                 Demand Outlook — Next 30 Days
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">Regional aggregate, all buyers</p>
             </div>
-            <span className="shrink-0 rounded-md bg-secondary px-2.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-secondary-foreground">
-              Sample AI Insight — Demo Data
-            </span>
           </div>
 
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
