@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { ArrowRight, Leaf } from "lucide-react";
 import heroImage from "@/assets/hero-farm-to-market.jpg";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -18,6 +19,8 @@ function FloatingLeaf({ className, delay }: { className: string; delay: string }
 }
 
 export function Hero() {
+  const openCrop = useOpenCTA("crop");
+  const openRequirement = useOpenCTA("requirement");
   return (
     <SectionWrapper
       id="top"
@@ -56,11 +59,11 @@ export function Hero() {
             className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             style={{ animationDelay: "240ms" }}
           >
-            <CTAButton size="lg" className="w-full sm:w-auto">
+            <CTAButton size="lg" className="w-full sm:w-auto" onClick={openCrop}>
               Check My Crop
               <ArrowRight aria-hidden="true" />
             </CTAButton>
-            <CTAButton variant="outline" size="lg" className="w-full sm:w-auto">
+            <CTAButton variant="outline" size="lg" className="w-full sm:w-auto" onClick={openRequirement}>
               Post Your Requirement
             </CTAButton>
           </div>

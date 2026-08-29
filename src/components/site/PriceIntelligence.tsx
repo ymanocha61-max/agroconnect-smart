@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { ArrowUpRight, Store, TrendingUp, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -12,6 +13,7 @@ const rows: { icon: LucideIcon; label: string; value: string; note: string }[] =
 ];
 
 export function PriceIntelligence({ onGetInsight }: { onGetInsight?: () => void }) {
+  const openCrop = useOpenCTA("crop");
   const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
@@ -28,7 +30,7 @@ export function PriceIntelligence({ onGetInsight }: { onGetInsight?: () => void 
             Compare what your crop could fetch across different channels — local markets, buyers
             active on the platform, and bulk requirements — so pricing is a decision, not a guess.
           </p>
-          <CTAButton size="lg" className="mt-8 w-full sm:w-auto" onClick={onGetInsight}>
+          <CTAButton size="lg" className="mt-8 w-full sm:w-auto" onClick={onGetInsight ?? openCrop}>
             Get Market Insight
             <ArrowUpRight aria-hidden="true" />
           </CTAButton>

@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CTAProvider } from "@/components/cta/cta-context";
+import { CTAModals } from "@/components/cta/CTAModals";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Problem } from "@/components/site/Problem";
@@ -33,7 +35,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <CTAProvider>
+      <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         <Hero />
@@ -49,6 +52,8 @@ function Index() {
         <FinalCTA />
       </main>
       <Footer />
-    </div>
+      <CTAModals />
+      </div>
+    </CTAProvider>
   );
 }

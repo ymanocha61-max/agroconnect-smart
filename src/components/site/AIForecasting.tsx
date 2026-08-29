@@ -1,3 +1,4 @@
+import { useOpenCTA } from "@/components/cta/cta-context";
 import { ArrowRight, ArrowUpRight, ArrowDownRight, MoveRight, MapPin, CalendarClock, BarChart3 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -64,6 +65,7 @@ function Sparkline({ series, muted }: { series: number[]; muted: boolean }) {
 }
 
 export function AIForecasting() {
+  const openCrop = useOpenCTA("crop");
   const { ref, visible } = useReveal<HTMLDivElement>(0.12);
 
   return (
@@ -165,7 +167,7 @@ export function AIForecasting() {
             ))}
           </ul>
 
-          <CTAButton size="lg" className="w-full sm:w-auto lg:self-start">
+          <CTAButton size="lg" className="w-full sm:w-auto lg:self-start" onClick={openCrop}>
             Check My Crop
             <ArrowRight aria-hidden="true" />
           </CTAButton>
