@@ -88,6 +88,8 @@ export function Hero() {
               alt="Illustration of produce moving from a farmer's fields through a digital marketplace and AI insights to a buyer's storefront"
               width={1280}
               height={1024}
+              fetchPriority="high"
+              decoding="async"
               className="h-auto w-full"
             />
           </div>
