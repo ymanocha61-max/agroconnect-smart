@@ -11,14 +11,15 @@ const areas: { dir: "up" | "down"; title: string; body: string }[] = [
   },
   {
     dir: "down",
-    title: "Supply Chain Inefficiencies",
+    title: "Fewer Supply Chain Inefficiencies",
     body: "Fewer intermediate steps between the farm and the buyer.",
   },
   {
     dir: "down",
-    title: "Avoidable Wastage",
+    title: "Less Avoidable Wastage",
     body: "Faster movement and better planning reduce produce sitting idle.",
   },
+
   {
     dir: "up",
     title: "Better Demand Visibility",
@@ -57,10 +58,10 @@ export function Impact() {
                 <Icon className="size-5" aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-base font-semibold text-leaf sm:text-lg">
-                {area.dir === "up" ? "More " : "Less "}
-                <span className="sr-only">{area.dir === "up" ? "increase" : "decrease"}</span>
+                <span className="sr-only">{area.dir === "up" ? "More: " : "Less: "}</span>
                 {area.title}
               </h3>
+
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{area.body}</p>
             </li>
           );

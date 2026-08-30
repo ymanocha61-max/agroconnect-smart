@@ -15,9 +15,9 @@ import { Impact } from "@/components/site/Impact";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Krishisetu — Sell Smarter. Buy Direct. Move Produce Faster.";
+const title = "AI-Powered Farm-to-Market Marketplace | Krishisetu";
 const description =
-  "AI-powered farm-to-market marketplace connecting farmers, FPOs and verified buyers with demand insights, price intelligence and smarter logistics.";
+  "Connect farmers, FPOs and buyers through an AI-powered agricultural marketplace with demand insights, transparent sourcing and smarter logistics.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,7 +27,31 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "Krishisetu" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Krishisetu",
+          description,
+          url: "/",
+          areaServed: "IN",
+          knowsAbout: [
+            "agricultural marketplace",
+            "crop demand forecasting",
+            "farm logistics",
+            "FPO produce aggregation",
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -36,7 +60,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <CTAProvider>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-dvh bg-background">
+
       <Navbar />
       <main>
         <Hero />
