@@ -52,9 +52,20 @@ export function Farmers({ onJoin }: { onJoin?: () => void }) {
             Built for individual growers and farmer producer organisations who want fairer prices
             and fewer intermediaries.
           </p>
-          <CTAButton size="lg" className="mt-8 w-full sm:w-auto" onClick={onJoin ?? openFarmer}>
-            Join as Farmer / FPO
-          </CTAButton>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <CTAButton size="lg" className="w-full sm:w-auto" onClick={onJoin ?? openFarmer}>
+              Join as Farmer / FPO
+            </CTAButton>
+            <CTAButton
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto"
+              onClick={onJoin ?? openFarmer}
+            >
+              List Your Produce
+            </CTAButton>
+          </div>
+
         </div>
 
         <ul ref={ref} className="grid gap-4 sm:grid-cols-2">
